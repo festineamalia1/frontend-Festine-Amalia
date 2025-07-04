@@ -48,10 +48,9 @@ const LandingPage = (props) => {
         
         <div class="logo mb-2 d-flex align-items-center justify-content-center"> 
           <img src={
-            dataRocket?.data[0]? dataRocket?.data[0]?.links?.patch?.small :
-            require(`../assets/images/astronot.png`)
+            require(`../assets/images/shop_logo.png`)
             } alt="Logo" className="logo-title w-80 px-2"/> 
-          ROCKETLIST
+          ADDORDER
           </div>
 
           

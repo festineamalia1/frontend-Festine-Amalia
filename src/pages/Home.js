@@ -12,22 +12,17 @@ import TableOrder from "../components/TableOrder";
 
 export default function Home() {
 
+const [dataNegara, setDataNegara] = useState();
 
-const [dataRocket, setDataRocket] = useState();
-const [keyword, setKeyword] = useState();
-
-
-
-
-   const fetchDataRocket = () => {
+   const fetchDataNegara = () => {
       axios
         .get(
-          `${API}`
+          `${API}/negaras`
         )
         .then(function (response) {
            
           console.log(response);
-          setDataRocket(response)
+          setDataNegara(response)
   
           
         })
@@ -39,30 +34,30 @@ const [keyword, setKeyword] = useState();
         });
     };
 
-    const handleSearchRocket = () => {
-      axios
-        .get(
-          `${API}?name=${keyword}`
-        )
-        .then(function (response) {
+    // const handleSearchRocket = () => {
+    //   axios
+    //     .get(
+    //       `${API}?name=${keyword}`
+    //     )
+    //     .then(function (response) {
            
-          console.log(response);
-          setDataRocket(response)
+    //       console.log(response);
+    //       setDataRocket(response)
   
           
-        })
-        .catch(function (error) {
-          console.log(error);
-          alert(
-            error.response.data.message
-          );
-        });
-    };
+    //     })
+    //     .catch(function (error) {
+    //       console.log(error);
+    //       alert(
+    //         error.response.data.message
+    //       );
+    //     });
+    // };
 
-    console.log("datahome", dataRocket?.data)
+     console.log("dataNegara", dataNegara?.data)
 
     useEffect(() => {
-        fetchDataRocket();
+        fetchDataNegara();
       }, []);
 
 
@@ -74,51 +69,69 @@ const [keyword, setKeyword] = useState();
 
     <section id="layanan">
       <div className="container">
+       
           <div className="row mt-5">
             <div className="col">
-              <h5>Daftar Rocket</h5>
+               <label for="inputState" class="form-label">Negara</label>
+                <select id="inputState" class="form-select">
+                  <option selected>Choose...</option>
+                     {dataNegara?.data &&
+                      dataNegara?.data?.map((data, i) => (
+                  <option>{data?.id_negara} - {data?.nama_negara}</option>
+                      ))}
+                </select>
+            </div>
+              <div className="col">
+                 <label for="inputState" class="form-label">Pelabuhan</label>
+                <select id="inputState" class="form-select">
+                  <option selected>Choose...</option>
+                  <option>...</option>
+                </select>
               </div>
-              <div className="col d-flex align-items-end justify-content-end">
-                
-                     <button type="button" class="btn btn-success">Tambah</button>
-         
+            
+          </div>
+          <div className="row mt-3">
+              <div class="col">
+            <label for="inputState" class="form-label">Barang</label>
+                <select id="inputState" class="form-select">
+                  <option selected>Choose...</option>
+                  <option>...</option>
+                </select>
+                </div>
+          </div>
+
+          <div className="row mt-3">
+              <div class="col">
+           <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+          </div>
+
+            <div className="row mt-3">
+            <div class="col">
+    <label for="inputCity" class="form-label">Discount %</label>
+    <input type="text" class="form-control" id="inputCity"/>
+  </div>
+              <div className="col">
+                  <label for="inputCity" class="form-label">Harga</label>
+    <input type="text" class="form-control" id="inputCity"/>
+              </div>
+            
+          </div>
+
+          <div className="row mt-3">
+              <div class="col">
+                <label for="inputCity" class="form-label">Total</label>
+                <input type="text" class="form-control" id="inputCity"/>
               </div>
           </div>
-       <div className="row mt-3">
-         
-    <div className="col p-0">
-          <div className="input-group">
-         <span className="input-group-text bg-white">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#bcbcbc" class="bi bi-search-heart" viewBox="0 0 16 16">
-            <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018"/>
-            <path d="M13 6.5a6.47 6.47 0 0 1-1.258 3.844q.06.044.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11"/>
-          </svg>
-         </span>
-       
-         <input type="text" className="form-control border-start-0" placeholder="Cari Rocket Name" 
-         value={keyword}
-         onChange={(e) => setKeyword(e.target.value)}
-         />
-       </div>
+
+          <div className="row mt-3">
+            <div className="col">
+              <button type="button" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
     
-    </div>
-    <div className="col-md-auto  d-flex   justify-content-end">
-      <button type="button" class="btn btn-primary"
-       onClick={() => {handleSearchRocket()}}>Cari</button>
-                        
-    </div>
-
-   
-       </div>
-      
-
-        
-
-        <div className="row mt-3">
-       
-         <TableOrder dataRocket={dataRocket}/>
-
-        </div>
       </div>
     </section>
    
