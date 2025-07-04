@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/frontend-Festine-Amalia/static/css/main.7f7fce16.css",
+    "main.js": "/frontend-Festine-Amalia/static/js/main.46a3779b.js",
+    "static/js/453.0001feb9.chunk.js": "/frontend-Festine-Amalia/static/js/453.0001feb9.chunk.js",
+    "static/media/bootstrap-icons.woff?": "/frontend-Festine-Amalia/static/media/bootstrap-icons.1295669cd4e305c97f2c.woff",
+    "static/media/bootstrap-icons.woff2?": "/frontend-Festine-Amalia/static/media/bootstrap-icons.92ea18a81d737146ff04.woff2",
+    "static/media/order-wall.jpg": "/frontend-Festine-Amalia/static/media/order-wall.f98cf65a683de6eb4430.jpg",
+    "static/media/shop_logo.png": "/frontend-Festine-Amalia/static/media/shop_logo.3d57ada12654ce5382fe.png",
+    "index.html": "/frontend-Festine-Amalia/index.html",
+    "main.7f7fce16.css.map": "/frontend-Festine-Amalia/static/css/main.7f7fce16.css.map",
+    "main.46a3779b.js.map": "/frontend-Festine-Amalia/static/js/main.46a3779b.js.map",
+    "453.0001feb9.chunk.js.map": "/frontend-Festine-Amalia/static/js/453.0001feb9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7f7fce16.css",
+    "static/js/main.46a3779b.js"
+  ]
+}
