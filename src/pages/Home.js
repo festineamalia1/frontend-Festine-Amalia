@@ -141,40 +141,33 @@ const [dataTotal, setDataTotal] = useState(0);
           </div>
           <div className="row mt-3">
               <div class="col">
-            <label for="inputState" class="form-label">Barang</label>
+              <label for="inputState" class="form-label">Barang</label>
                 <select id="inputState" class="form-select"
                 >
                   {
                     dataBarang?.length === 0 ?
                      <option selected>Pilih Barang</option>
                      :
- dataBarang?.data &&
+                    dataBarang?.data &&
                       dataBarang?.data?.map((data, i) => (
-                  <option
-                 selected={
-                  i = 0 ? true : false
-                 }
-                  value={data.id_barang}
-                  >{data?.id_barang} - {data?.nama_barang}</option>
+                      <option
+                        selected={i = 0 ? true : false}
+                        value={data.id_barang}>
+                        {data?.id_barang} - {data?.nama_barang}
+                      </option>
                    ))
                   }
-                 
-                  
                 </select>
                 </div>
-          </div>
+            </div>
 
-          <div className="row mt-3">
+            <div className="row mt-3">
               <div class="col">
-           <label for="exampleFormControlTextarea1" class="form-label"
-             
-           >Description</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-           value={dataDeskripsi}
-          ></textarea>
-                </div>
-          </div>
-
+              <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+              value={dataDeskripsi}></textarea>
+              </div>
+            </div>
             <div className="row mt-3">
             <div class="col">
               <label for="inputCity" class="form-label">Discount %</label>
