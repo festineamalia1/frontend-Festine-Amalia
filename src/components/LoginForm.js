@@ -1,22 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate  } from "react-router-dom";
-import { API, setAuthToken } from "config/api";
 import { connect } from "react-redux";
 import { handleLogin } from "actions";
-import axios from "axios";
 
 const LoginForm = (props) => {
   const navigate = useNavigate ();
 
-   const [see, setSee] = useState(false);
-     const [email, setEmail] = useState("admin@gmail.com");
+  const [see, setSee] = useState(false);
+  const [email, setEmail] = useState("admin@gmail.com");
   const [password, setPassword] = useState("admin123");
- 
- 
-  const StatusLog = window.localStorage.getItem("LogStatus");
-  const handleRedirect = () => {
-    window.location.reload();
-  };
+
   return (
    <>
    <div class="form-heading d-flex align-items-center justify-content-center mx-8">
