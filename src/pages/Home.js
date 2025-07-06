@@ -165,24 +165,34 @@ const [dataTotal, setDataTotal] = useState(0);
               <div class="col">
               <label for="exampleFormControlTextarea1" class="form-label">Description</label>
               <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-              value={dataDeskripsi}></textarea>
+              value={dataDeskripsi} disabled></textarea>
               </div>
             </div>
             <div className="row mt-3">
             <div class="col">
               <label for="inputCity" class="form-label">Discount %</label>
-              <input type="text" class="form-control" id="inputCity"  value={dataDiskon}/>
+              <input type="text" 
+              class="form-control" id="inputCity"  
+              value={dataDiskon}
+              onChange={(e) => setDataDiskon(e.target.value)}
+              />
             </div>
               <div className="col">
                 <label for="inputCity" class="form-label">Harga</label>
-                <input type="text" class="form-control" id="inputCity" value={`Rp. ${handleFormatUang(dataHarga)}`}/>
+                <input type="text" class="form-control" id="inputCity" 
+                value={`Rp. ${handleFormatUang(dataHarga)}`}
+                onChange={(e) => setDataHarga(e.target.value)}
+                />
               </div>
           </div>
 
           <div className="row mt-3 mb-5">
               <div class="col">
                 <label for="inputCity" class="form-label">Total</label>
-                <input type="text" class="form-control" id="inputCity" value={`Rp. ${handleFormatUang(dataTotal)}`}/>
+                <input type="text" class="form-control" id="inputCity" 
+                value={`Rp. ${handleFormatUang(dataTotal)}`}
+                onChange={(e) => setDataTotal(e.target.value)}
+                />
               </div>
           </div>
 
